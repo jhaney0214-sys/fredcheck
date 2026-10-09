@@ -7,7 +7,10 @@ No API key: both arms run as subagents on the author's plan.
    (gitignored; written by `fred_auth.py`). Its token lasts an hour from when it
    was written. If the FRED tools fail with an auth error, ask the author to run
    `python fred_auth.py --refresh` and restart the session.
-2. **Rebuild the key on the day:** `python build_key.py`. Latest values move.
+   Then check the write-up's headline still holds: `python fred_call.py list` and look
+   for an as-of, realtime or vintage parameter on any tool. None on 2026-10-06 or
+   2026-10-09 (five tools); if one has appeared, the V finding has to be re-tested, not reused.
+2. **Rebuild the key on the day:** `python build_key.py`. It takes no options (`--help` runs a full build). Latest values move.
    **Never show key.json or its values to an arm agent**, and never put an answer in an agent's prompt.
    After the key is built, delete `.cache/`. FRED's terms bar storing its content, so keep only the values the key needs.
 3. **Run the three arms.** Send the questions from `questions.json` in batches of 10
