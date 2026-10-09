@@ -1,0 +1,42 @@
+[
+ {
+  "id": "H01",
+  "question": "What was the U.S. unemployment rate in April 2020?"
+ },
+ {
+  "id": "H02",
+  "question": "What was the U.S. unemployment rate in October 2009?"
+ },
+ {
+  "id": "H03",
+  "question": "What was the highest weekly 30-year fixed mortgage rate in 1981, and in which week?"
+ },
+ {
+  "id": "H04",
+  "question": "What was the 10-year Treasury yield on March 9, 2020?"
+ },
+ {
+  "id": "H05",
+  "question": "What was year-over-year headline CPI inflation (all urban consumers, seasonally adjusted) in June 2022?"
+ },
+ {
+  "id": "H06",
+  "question": "How many housing starts (seasonally adjusted annual rate) were there in January 2006?"
+ },
+ {
+  "id": "H07",
+  "question": "What was the lowest monthly reading of the University of Michigan consumer sentiment index in 2022, and in which month?"
+ },
+ {
+  "id": "H08",
+  "question": "What was the spot price of WTI crude oil on April 20, 2020?"
+ },
+ {
+  "id": "H09",
+  "question": "What was the U.S. personal saving rate in April 2020?"
+ },
+ {
+  "id": "H10",
+  "question": "What was annualized U.S. real GDP growth in the second quarter of 2020?"
+ }
+]

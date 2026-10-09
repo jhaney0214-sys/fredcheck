@@ -1,0 +1,42 @@
+[
+ {
+  "id": "A01",
+  "question": "Who is the original source of the 30-year fixed mortgage rate that FRED publishes, and how often is it published?"
+ },
+ {
+  "id": "A02",
+  "question": "Who is the source of the S&P 500 series on FRED, and how far back does FRED's copy go?"
+ },
+ {
+  "id": "A03",
+  "question": "Who is the source of the Case-Shiller U.S. National Home Price Index on FRED?"
+ },
+ {
+  "id": "A04",
+  "question": "Where does the consumer sentiment index on FRED come from?"
+ },
+ {
+  "id": "A05",
+  "question": "Who is the source of FRED's daily WTI crude oil spot price?"
+ },
+ {
+  "id": "A06",
+  "question": "Which agency is the source of the weekly initial jobless claims series on FRED, and is the headline series seasonally adjusted?"
+ },
+ {
+  "id": "A07",
+  "question": "In what units is U.S. real GDP reported on FRED?"
+ },
+ {
+  "id": "A08",
+  "question": "What are the units and base period of FRED's CPI for all urban consumers?"
+ },
+ {
+  "id": "A09",
+  "question": "Who publishes the median sales price of houses sold that FRED carries?"
+ },
+ {
+  "id": "A10",
+  "question": "Who is the source of the effective federal funds rate on FRED?"
+ }
+]

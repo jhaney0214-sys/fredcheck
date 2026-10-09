@@ -1,0 +1,278 @@
+{
+ "built": "2026-10-06T12:52:53+00:00",
+ "answers": {
+  "L01": {
+   "value": 4.2,
+   "date": "2026-09-01",
+   "series": "UNRATE"
+  },
+  "L02": {
+   "value": 3.353016322755642,
+   "date": "2026-08-01",
+   "series": "CPIAUCSL"
+  },
+  "L03": {
+   "value": 29.0,
+   "date": "2026-09-01",
+   "series": "PAYEMS"
+  },
+  "L04": {
+   "value": 7.28,
+   "date": "2026-10-01",
+   "series": "MORTGAGE30US"
+  },
+  "L05": {
+   "value": 5.28,
+   "date": "2026-10-02",
+   "series": "DGS10"
+  },
+  "L06": {
+   "value": 3.75,
+   "date": "2026-09-01",
+   "series": "FEDFUNDS"
+  },
+  "L07": {
+   "value": 2.2,
+   "date": "2026-04-01",
+   "series": "A191RL1Q225SBEA"
+  },
+  "L08": {
+   "value": 1275.0,
+   "date": "2026-08-01",
+   "series": "HOUST"
+  },
+  "L09": {
+   "value": 197000.0,
+   "date": "2026-09-26",
+   "series": "ICSA"
+  },
+  "L10": {
+   "value": 51.7,
+   "date": "2026-08-01",
+   "series": "UMCSENT"
+  },
+  "H01": {
+   "value": 14.8,
+   "date": "2020-04-01",
+   "series": "UNRATE"
+  },
+  "H02": {
+   "value": 10.0,
+   "date": "2009-10-01",
+   "series": "UNRATE"
+  },
+  "H03": {
+   "value": 18.63,
+   "date": "1981-10-09",
+   "series": "MORTGAGE30US"
+  },
+  "H04": {
+   "value": 0.54,
+   "date": "2020-03-09",
+   "series": "DGS10"
+  },
+  "H05": {
+   "value": 8.979361103105798,
+   "date": "2022-06-01",
+   "series": "CPIAUCSL"
+  },
+  "H06": {
+   "value": 2273.0,
+   "date": "2006-01-01",
+   "series": "HOUST"
+  },
+  "H07": {
+   "value": 50.0,
+   "date": "2022-06-01",
+   "series": "UMCSENT"
+  },
+  "H08": {
+   "value": -36.98,
+   "date": "2020-04-20",
+   "series": "DCOILWTICO"
+  },
+  "H09": {
+   "value": 31.8,
+   "date": "2020-04-01",
+   "series": "PSAVERT"
+  },
+  "H10": {
+   "value": -28.0,
+   "date": "2020-04-01",
+   "series": "A191RL1Q225SBEA"
+  },
+  "H11": {
+   "value": 19.04,
+   "date": "1981-07-01",
+   "series": "FEDFUNDS"
+  },
+  "H12": {
+   "value": 442600.0,
+   "date": "2022-10-01",
+   "series": "MSPUS"
+  },
+  "C01": {
+   "value": 3.675,
+   "n": 12,
+   "series": "UNRATE"
+  },
+  "C02": {
+   "value": 5,
+   "dates": [
+    "2023-01-01",
+    "2023-02-01",
+    "2023-03-01",
+    "2023-04-01",
+    "2023-05-01"
+   ],
+   "series": "CPIAUCSL"
+  },
+  "C03": {
+   "value": 7.79,
+   "date": "2023-10-26",
+   "series": "MORTGAGE30US"
+  },
+  "C04": {
+   "value": 1459.0,
+   "from": 156857.0,
+   "to": 158316.0,
+   "series": "PAYEMS"
+  },
+  "C05": {
+   "value": 129.62275542834143,
+   "from": 134.157,
+   "to": 308.055,
+   "series": "CSUSHPINSA"
+  },
+  "C06": {
+   "value": -1.08,
+   "date": "2023-07-03",
+   "series": "T10Y2Y"
+  },
+  "C07": {
+   "value": 3,
+   "dates": [
+    "2020-01-01",
+    "2020-04-01",
+    "2022-01-01"
+   ],
+   "series": "A191RL1Q225SBEA"
+  },
+  "C08": {
+   "value": 6137000.0,
+   "date": "2020-04-04",
+   "series": "ICSA"
+  },
+  "V01": {
+   "first": 228.0,
+   "first_vintage": "2025-04-04",
+   "now": 67.0,
+   "revision": -161.0,
+   "series": "PAYEMS"
+  },
+  "V02": {
+   "first": 139.0,
+   "first_vintage": "2025-06-06",
+   "now": 13.0,
+   "revision": -126.0,
+   "series": "PAYEMS"
+  },
+  "V03": {
+   "first": 147.0,
+   "first_vintage": "2025-07-03",
+   "now": -20.0,
+   "revision": -167.0,
+   "series": "PAYEMS"
+  },
+  "V04": {
+   "first": 73.0,
+   "first_vintage": "2025-08-01",
+   "now": 64.0,
+   "revision": -9.0,
+   "series": "PAYEMS"
+  },
+  "V05": {
+   "first": -1.4,
+   "first_vintage": "2022-04-28",
+   "now": -1.0,
+   "revision": 0.3999999999999999,
+   "series": "A191RL1Q225SBEA"
+  },
+  "V06": {
+   "first": -0.9,
+   "first_vintage": "2022-07-28",
+   "now": 0.6,
+   "revision": 1.5,
+   "series": "A191RL1Q225SBEA"
+  },
+  "V07": {
+   "first": 2.3,
+   "first_vintage": "2025-01-30",
+   "now": 2.4,
+   "revision": 0.10000000000000009,
+   "series": "A191RL1Q225SBEA"
+  },
+  "V08": {
+   "value": 4.0,
+   "date": "2025-01-01",
+   "vintage": "2025-03-01",
+   "series": "UNRATE"
+  },
+  "V09": {
+   "value": 159536.0,
+   "vintage": "2025-02-01",
+   "now": 158316.0,
+   "series": "PAYEMS"
+  },
+  "V10": {
+   "first": 2.8965932720523835,
+   "first_vintage": "2025-01-15",
+   "now": 2.870690967509981,
+   "revision": -0.025902304542402277,
+   "series": "CPIAUCSL"
+  },
+  "A01": {
+   "source": "Freddie Mac",
+   "frequency": "Weekly, Ending Thursday",
+   "series": "MORTGAGE30US"
+  },
+  "A02": {
+   "source": "S&P Dow Jones Indices LLC",
+   "first_date": "2016-10-06",
+   "series": "SP500"
+  },
+  "A03": {
+   "source": "S&P Dow Jones Indices LLC",
+   "series": "CSUSHPINSA"
+  },
+  "A04": {
+   "source": "University of Michigan",
+   "series": "UMCSENT"
+  },
+  "A05": {
+   "source": "U.S. Energy Information Administration",
+   "series": "DCOILWTICO"
+  },
+  "A06": {
+   "source": "U.S. Employment and Training Administration",
+   "units": "Number , Seasonally Adjusted",
+   "series": "ICSA"
+  },
+  "A07": {
+   "units": "Billions of Chained 2017 Dollars , Seasonally Adjusted Annual Rate",
+   "series": "GDPC1"
+  },
+  "A08": {
+   "units": "Index 1982-1984=100 , Seasonally Adjusted",
+   "series": "CPIAUCSL"
+  },
+  "A09": {
+   "source": "U.S. Census Bureau; U.S. Department of Housing and Urban Development",
+   "series": "MSPUS"
+  },
+  "A10": {
+   "source": "Board of Governors of the Federal Reserve System (US)",
+   "series": "FEDFUNDS"
+  }
+ }
+}

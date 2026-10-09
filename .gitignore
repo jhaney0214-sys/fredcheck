@@ -1,0 +1,12 @@
+# Credentials. fred_auth.py writes all three; each holds an OAuth client or token
+# for the author's FRED account. Never commit them, private or public.
+.fred_token.json
+.fred_client.json
+.mcp.json
+
+# build_key.py's HTTP cache of fredgraph/alfredgraph CSVs: refetchable, and
+# whole series rather than the few values the questions need.
+.cache/
+
+__pycache__/
+*.py[cod]

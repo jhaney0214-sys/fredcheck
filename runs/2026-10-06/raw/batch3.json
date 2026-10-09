@@ -1,0 +1,42 @@
+[
+ {
+  "id": "H11",
+  "question": "What was the effective federal funds rate in July 1981 (monthly average)?"
+ },
+ {
+  "id": "H12",
+  "question": "What was the median sales price of houses sold in the U.S. in the fourth quarter of 2022?"
+ },
+ {
+  "id": "C01",
+  "question": "What was the average U.S. unemployment rate over the 12 months of 2019?"
+ },
+ {
+  "id": "C02",
+  "question": "In how many months of 2023 was year-over-year headline CPI inflation (all urban consumers, seasonally adjusted) above 4%?"
+ },
+ {
+  "id": "C03",
+  "question": "What was the highest weekly 30-year fixed mortgage rate in 2023, and in which week?"
+ },
+ {
+  "id": "C04",
+  "question": "How many nonfarm payroll jobs did the U.S. add in total during 2024, December 2023 to December 2024?"
+ },
+ {
+  "id": "C05",
+  "question": "By what percent did the Case-Shiller U.S. National Home Price Index (not seasonally adjusted) rise from January 2012 to June 2022?"
+ },
+ {
+  "id": "C06",
+  "question": "What was the most negative daily spread between the 10-year and 2-year Treasury yields in 2023, and on what date?"
+ },
+ {
+  "id": "C07",
+  "question": "How many quarters from 2020 through 2024 had negative annualized U.S. real GDP growth?"
+ },
+ {
+  "id": "C08",
+  "question": "What was the peak weekly number of initial jobless claims in 2020, and for which week?"
+ }
+]

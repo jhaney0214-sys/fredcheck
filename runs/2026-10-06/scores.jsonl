@@ -1,0 +1,150 @@
+{"arm": "web", "id": "L01", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "L02", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "L03", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "L04", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "L05", "number": 0, "period": 1, "source": 1, "reason": "Said 3.85% for 2026-10-02; FRED DGS10 is 5.28%. The figure matches no recent observation."}
+{"arm": "web", "id": "L06", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "L07", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "L08", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "L09", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "L10", "number": 0, "period": 0, "source": 1, "reason": "Gave UMich's own September reading (48.1); the key is FRED's latest, August 51.7. Web was more current than FRED, but this is FRED's question."}
+{"arm": "web", "id": "H01", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "H02", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "H03", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "H04", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "H05", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "H06", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "H07", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "H08", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "H09", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "H10", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "H11", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "H12", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "C01", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "C02", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "C03", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "C04", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "C05", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "C06", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "C07", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "C08", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "V01", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "V02", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "V03", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "V04", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "V05", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "V06", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "V07", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "V08", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "V09", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "V10", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "A01", "number": 1, "period": null, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "A02", "number": 1, "period": null, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "A03", "number": 1, "period": null, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "A04", "number": 1, "period": null, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "A05", "number": 1, "period": null, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "A06", "number": 1, "period": null, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "A07", "number": 1, "period": null, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "A08", "number": 1, "period": null, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "A09", "number": 1, "period": null, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "web", "id": "A10", "number": 1, "period": null, "source": 1, "reason": "Named NY Fed (EFFR) and the Board (DFF); Board named, so source counted."}
+{"arm": "fred", "id": "L01", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "L02", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "L03", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "L04", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "L05", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "L06", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "L07", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "L08", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "L09", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "L10", "number": 1, "period": 1, "source": 1, "reason": "Right per FRED, and flagged FRED's one-month lag."}
+{"arm": "fred", "id": "H01", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "H02", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "H03", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "H04", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "H05", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "H06", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "H07", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "H08", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "H09", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "H10", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "H11", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "H12", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "C01", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "C02", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "C03", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "C04", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "C05", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "C06", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "C07", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "C08", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "V01", "number": 1, "period": 1, "source": 1, "reason": "Numbers right, but first print given from memory: connector returns today's vintage only."}
+{"arm": "fred", "id": "V02", "number": 1, "period": 1, "source": 1, "reason": "Numbers right, but first print given from memory: connector returns today's vintage only."}
+{"arm": "fred", "id": "V03", "number": 1, "period": 1, "source": 1, "reason": "Numbers right, but first print given from memory: connector returns today's vintage only."}
+{"arm": "fred", "id": "V04", "number": 1, "period": 1, "source": 1, "reason": "Numbers right, but first print given from memory: connector returns today's vintage only."}
+{"arm": "fred", "id": "V05", "number": 1, "period": 1, "source": 1, "reason": "Numbers right, but first print given from memory: connector returns today's vintage only."}
+{"arm": "fred", "id": "V06", "number": 1, "period": 1, "source": 1, "reason": "Numbers right, but first print given from memory: connector returns today's vintage only."}
+{"arm": "fred", "id": "V07", "number": 1, "period": 1, "source": 1, "reason": "Numbers right, but first print given from memory: connector returns today's vintage only."}
+{"arm": "fred", "id": "V08", "number": 1, "period": 1, "source": 1, "reason": "Numbers right, but first print given from memory: connector returns today's vintage only."}
+{"arm": "fred", "id": "V09", "number": 0, "period": 1, "source": 1, "reason": "Connector has no vintage option; answered from memory 159,222k, key 159,536k."}
+{"arm": "fred", "id": "V10", "number": 1, "period": 1, "source": 1, "reason": "Numbers right, but first print given from memory: connector returns today's vintage only."}
+{"arm": "fred", "id": "A01", "number": 1, "period": null, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "A02", "number": 1, "period": null, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "A03", "number": 1, "period": null, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "A04", "number": 1, "period": null, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "A05", "number": 1, "period": null, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "A06", "number": 1, "period": null, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "A07", "number": 1, "period": null, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "A08", "number": 1, "period": null, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "A09", "number": 1, "period": null, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "fred", "id": "A10", "number": 1, "period": null, "source": 1, "reason": "Named NY Fed for EFFR; Board for FEDFUNDS only from memory (connector 403s). Board named, so source counted."}
+{"arm": "memory", "id": "L01", "number": 0, "period": 0, "source": 1, "reason": "Gave a range or estimate, not a figure for the period; said it could not see the latest release."}
+{"arm": "memory", "id": "L02", "number": 0, "period": 0, "source": 1, "reason": "Gave a range or estimate, not a figure for the period; said it could not see the latest release."}
+{"arm": "memory", "id": "L03", "number": 0, "period": 0, "source": 1, "reason": "Gave a range or estimate, not a figure for the period; said it could not see the latest release."}
+{"arm": "memory", "id": "L04", "number": 0, "period": 0, "source": 1, "reason": "Gave a range or estimate, not a figure for the period; said it could not see the latest release."}
+{"arm": "memory", "id": "L05", "number": 0, "period": 0, "source": 1, "reason": "Gave a range or estimate, not a figure for the period; said it could not see the latest release."}
+{"arm": "memory", "id": "L06", "number": 0, "period": 0, "source": 1, "reason": "Gave a range or estimate, not a figure for the period; said it could not see the latest release."}
+{"arm": "memory", "id": "L07", "number": 0, "period": 0, "source": 1, "reason": "Gave a range or estimate, not a figure for the period; said it could not see the latest release."}
+{"arm": "memory", "id": "L08", "number": 0, "period": 0, "source": 1, "reason": "Gave a range or estimate, not a figure for the period; said it could not see the latest release."}
+{"arm": "memory", "id": "L09", "number": 0, "period": 0, "source": 1, "reason": "Gave a range or estimate, not a figure for the period; said it could not see the latest release."}
+{"arm": "memory", "id": "L10", "number": 0, "period": 0, "source": 1, "reason": "Gave a range or estimate, not a figure for the period; said it could not see the latest release."}
+{"arm": "memory", "id": "H01", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "memory", "id": "H02", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "memory", "id": "H03", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "memory", "id": "H04", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "memory", "id": "H05", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "memory", "id": "H06", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "memory", "id": "H07", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "memory", "id": "H08", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "memory", "id": "H09", "number": 0, "period": 1, "source": 1, "reason": "About 32%; key 31.8%."}
+{"arm": "memory", "id": "H10", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "memory", "id": "H11", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "memory", "id": "H12", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "memory", "id": "C01", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "memory", "id": "C02", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "memory", "id": "C03", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "memory", "id": "C04", "number": 0, "period": 1, "source": 1, "reason": "About 1.5 million; key 1,459k."}
+{"arm": "memory", "id": "C05", "number": 0, "period": 1, "source": 1, "reason": "Roughly 129% from remembered levels (306 for June 2022, key 308.055); key 129.6%."}
+{"arm": "memory", "id": "C06", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "memory", "id": "C07", "number": 0, "period": 1, "source": 1, "reason": "Said 4, counting Q2 2022 as negative; it is +0.6 in current data. Key 3."}
+{"arm": "memory", "id": "C08", "number": 1, "period": 0, "source": 1, "reason": "6,137,000 right, but unsure of the week; key week ending 2020-04-04."}
+{"arm": "memory", "id": "V01", "number": 0, "period": 1, "source": 1, "reason": "First print 228k right; 'now' ~120k, key 67k."}
+{"arm": "memory", "id": "V02", "number": 0, "period": 1, "source": 1, "reason": "First print 139k right; 'now' ~19k, key 13k."}
+{"arm": "memory", "id": "V03", "number": 0, "period": 1, "source": 1, "reason": "First print 147k right; 'now' ~-13k, key -20k."}
+{"arm": "memory", "id": "V04", "number": 0, "period": 1, "source": 1, "reason": "First print 73k right; 'now' ~72k, key 64k."}
+{"arm": "memory", "id": "V05", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "memory", "id": "V06", "number": 0, "period": 1, "source": 1, "reason": "Advance -0.9 right; 'now' ~+0.3, key +0.6."}
+{"arm": "memory", "id": "V07", "number": 0, "period": 1, "source": 1, "reason": "Advance 2.3 right; 'now' given as 2.4 to 2.5, key 2.4."}
+{"arm": "memory", "id": "V08", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "memory", "id": "V09", "number": 1, "period": 1, "source": 1, "reason": "About 159.5 million; key 159,536k."}
+{"arm": "memory", "id": "V10", "number": 1, "period": 1, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "memory", "id": "A01", "number": 1, "period": null, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "memory", "id": "A02", "number": 1, "period": null, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "memory", "id": "A03", "number": 1, "period": null, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "memory", "id": "A04", "number": 1, "period": null, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "memory", "id": "A05", "number": 1, "period": null, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "memory", "id": "A06", "number": 1, "period": null, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "memory", "id": "A07", "number": 1, "period": null, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "memory", "id": "A08", "number": 1, "period": null, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "memory", "id": "A09", "number": 1, "period": null, "source": 1, "reason": "Matches the key on number, period and source."}
+{"arm": "memory", "id": "A10", "number": 1, "period": null, "source": 1, "reason": "Matches the key on number, period and source."}
