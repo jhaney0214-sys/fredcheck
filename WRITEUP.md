@@ -2,7 +2,7 @@
 
 *Draft, 2026-10-08. Numbers are from a first run on 2026-10-06 and get replaced by the clean re-run before this goes anywhere.*
 
-On 1 October the St. Louis Fed launched an official MCP connector for FRED, so AI assistants can pull economic data straight from the source. I wanted to know whether it makes their answers more accurate, so I wrote 50 questions with answers computed from FRED itself and put them to Claude three ways: with the connector, with web search, and with no tools at all.
+On 1 October, at FRED Con, the St. Louis Fed showed off its new official MCP connector for FRED, so AI assistants can pull economic data straight from the source. In his [opening remarks](https://www.federalreserve.gov/newsevents/speech/waller20261001a.htm), Governor Waller said that about half of FRED's visits now come from AI agents, and that FRED's managers don't know whether those agents attribute the data to its original source. I wanted to know whether it makes their answers more accurate, so I wrote 50 questions with answers computed from FRED itself and put them to Claude three ways: with the connector, with web search, and with no tools at all.
 
 Each answer was scored on three things: the right number, the right period, and the right source (the agency that produces the figure, not just "FRED").
 
@@ -43,7 +43,8 @@ The web arm got all ten from the data, by reading ALFRED's public download files
 - Questions, answer key, every answer and every score are in the repo: [link].
 - The repo holds only the few data values the questions need, each cited to its FRED series. Some series belong to their producers (S&P Dow Jones Indices, the University of Michigan), and FRED's terms apply to them.
 - FRED is a trademark of the Federal Reserve Bank of St. Louis. This project is independent and not affiliated with or endorsed by the St. Louis Fed or Anthropic.
+- This product uses the FRED® MCP Connector but is not endorsed or certified by the Federal Reserve Bank of St. Louis.
 
 ## The ask
 
-If the connector gained an as-of date, the "what did we know then" question would come from data instead of memory. If you work on FRED, I'd like to hear whether that's planned. If you've hit this yourself, tell me your example.
+If the connector gained an as-of date, the "what did we know then" question would come from data instead of memory. Governor Waller said FRED is working to link to ALFRED "for AI inquiries to include how data have evolved," so it looks planned. If you work on FRED, I'd like to know whether these 10 vintage questions would make a useful test for it. If you've hit this yourself, tell me your example.
