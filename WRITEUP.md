@@ -1,6 +1,6 @@
 # The FRED connector can't tell you what we knew then
 
-*Draft, 2026-10-11. Numbers are from the run of 10 October 2026 (`runs/2026-10-10/`). A first, rougher run on 6 October is in `runs/2026-10-06/`. Not yet published.*
+*Draft, 2026-10-11. Numbers are from the run of 10 October 2026 (`runs/2026-10-10/`). A first, rougher run on 6 October is in `runs/2026-10-06/`.*
 
 On 1 October, at FRED Con, the St. Louis Fed showed off its new official MCP connector for FRED, so AI assistants can pull economic data straight from the source. In his [opening remarks](https://www.federalreserve.gov/newsevents/speech/waller20261001a.htm), Governor Waller said that about half of FRED's visits now come from AI agents, and that FRED's managers don't know whether those agents attribute the data to its original source. I wanted to know whether it makes their answers more accurate, so I wrote 50 questions with answers computed from FRED itself and put them to Claude three ways: with the connector, with web search, and with no tools at all.
 
@@ -45,7 +45,7 @@ The web arm got all ten from the data, both times, by reading ALFRED's public do
 - Answers were scored against values computed from FRED and ALFRED on the day of the run. Latest values move, so the key was rebuilt that day.
 - The no-tools arm was not locked out of tools. It was told to answer from memory, and each of its agents made one tool call, the one that hands back its report. The answer key was moved out of the project while the arms ran.
 - The no-tools arm lost marks for rounding ("roughly 32%" against 31.8%) and for giving a range. Counting the two rounded answers would make it 33 of 50.
-- Questions, answer key, every answer and every score are in the repo: [link].
+- Questions, answer key, every answer and every score are in the repo: [github.com/jhaney0214-sys/fredcheck](https://github.com/jhaney0214-sys/fredcheck).
 - The repo holds only the few data values the questions need, each cited to its FRED series. Some series belong to their producers (S&P Dow Jones Indices, the University of Michigan), and FRED's terms apply to them.
 - FRED is a trademark of the Federal Reserve Bank of St. Louis. This project is independent and not affiliated with or endorsed by the St. Louis Fed or Anthropic.
 - This product uses the FRED® MCP Connector but is not endorsed or certified by the Federal Reserve Bank of St. Louis.
