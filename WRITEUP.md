@@ -1,6 +1,6 @@
 # The FRED connector can't tell you what we knew then
 
-*Draft, 2026-10-11. Numbers are from the run of 10 October 2026 (`runs/2026-10-10/`). A first, rougher run on 6 October is in `runs/2026-10-06/`.*
+*11 October 2026. Numbers are from the run of 10 October 2026 (`runs/2026-10-10/`). A first, rougher run on 6 October is in `runs/2026-10-06/`.*
 
 On 1 October, at FRED Con, the St. Louis Fed showed off its new official MCP connector for FRED, so AI assistants can pull economic data straight from the source. In his [opening remarks](https://www.federalreserve.gov/newsevents/speech/waller20261001a.htm), Governor Waller said that about half of FRED's visits now come from AI agents, and that FRED's managers don't know whether those agents attribute the data to its original source. I wanted to know whether it makes their answers more accurate, so I wrote 50 questions with answers computed from FRED itself and put them to Claude three ways: with the connector, with web search, and with no tools at all.
 
