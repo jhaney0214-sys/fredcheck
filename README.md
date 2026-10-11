@@ -9,7 +9,7 @@
 - `.claude/agents/`: the three arm definitions (Claude Code subagents).
 - `fred_auth.py`, `fred_call.py`: sign in to the connector, and call its tools from the command line.
 
-The 2026-10-06 run is a draft. See its `RESULTS.md` for how it differed from the runbook.
+`WRITEUP.md` reports the 2026-10-10 run: connector 50 of 50 numbers right, web search 49, no tools 31. The connector has no vintage or as-of option, so its first-reported figures came from the model's memory. The 2026-10-06 run is a draft; see its `RESULTS.md` for how it differed from the runbook.
 
 The repo holds only the few data values the questions need, each cited to its FRED series. Some series belong to their producers (S&P Dow Jones Indices, the University of Michigan), and FRED's terms of use apply to them.
 

@@ -1,0 +1,42 @@
+[
+ {
+  "id": "L01",
+  "question": "What is the most recent U.S. unemployment rate, and which month is it for?"
+ },
+ {
+  "id": "L02",
+  "question": "What is the latest year-over-year headline CPI inflation rate (all urban consumers, seasonally adjusted), and for which month?"
+ },
+ {
+  "id": "L03",
+  "question": "How many jobs did the U.S. economy add in the most recent monthly jobs report (total nonfarm payrolls, seasonally adjusted), and for which month?"
+ },
+ {
+  "id": "L04",
+  "question": "What is the current average 30-year fixed mortgage rate in the U.S., and for which week?"
+ },
+ {
+  "id": "L05",
+  "question": "What was the most recent daily 10-year Treasury yield, and on what date?"
+ },
+ {
+  "id": "L06",
+  "question": "What is the most recent monthly effective federal funds rate, and for which month?"
+ },
+ {
+  "id": "L07",
+  "question": "What was U.S. real GDP growth (annualized, quarter over quarter) in the most recent quarter reported?"
+ },
+ {
+  "id": "L08",
+  "question": "How many housing starts (seasonally adjusted annual rate) were there in the latest month reported?"
+ },
+ {
+  "id": "L09",
+  "question": "What was the latest weekly number of initial jobless claims (seasonally adjusted), and for which week?"
+ },
+ {
+  "id": "L10",
+  "question": "What is the latest reading of the University of Michigan consumer sentiment index, and for which month?"
+ }
+]

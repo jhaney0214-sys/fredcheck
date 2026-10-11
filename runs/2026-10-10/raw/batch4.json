@@ -1,0 +1,42 @@
+[
+ {
+  "id": "V01",
+  "question": "As first reported, how many jobs did the U.S. add in March 2025, and what does the data say now?"
+ },
+ {
+  "id": "V02",
+  "question": "As first reported, how many jobs did the U.S. add in May 2025, and what does the data say now?"
+ },
+ {
+  "id": "V03",
+  "question": "As first reported, how many jobs did the U.S. add in June 2025, and what does the data say now?"
+ },
+ {
+  "id": "V04",
+  "question": "As first reported, how many jobs did the U.S. add in July 2025, and what does the data say now?"
+ },
+ {
+  "id": "V05",
+  "question": "What did the advance estimate say U.S. real GDP growth was in the first quarter of 2022, and what does the data say now?"
+ },
+ {
+  "id": "V06",
+  "question": "What did the advance estimate say U.S. real GDP growth was in the second quarter of 2022, and what does the data say now?"
+ },
+ {
+  "id": "V07",
+  "question": "What did the advance estimate say U.S. real GDP growth was in the fourth quarter of 2024, and what does the data say now?"
+ },
+ {
+  "id": "V08",
+  "question": "Using only data published by March 1, 2025, what was the latest U.S. unemployment rate, and for which month?"
+ },
+ {
+  "id": "V09",
+  "question": "As of February 1, 2025, what did the official data say total U.S. nonfarm employment was in December 2024?"
+ },
+ {
+  "id": "V10",
+  "question": "As first reported, what was year-over-year headline CPI inflation (seasonally adjusted) for December 2024, and what does the data say now?"
+ }
+]
