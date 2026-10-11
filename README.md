@@ -2,6 +2,8 @@
 
 50 questions about U.S. economic data, with answers computed from FRED and ALFRED, put to an AI assistant three ways: with FRED's official MCP connector, with web search, and with no tools. Each answer is scored for the right number, the right period and the right source.
 
+![Numbers right by kind of question: FRED connector 50 of 50, web search 49, no tools 31. With no tools the model got 0 of 10 latest values and 4 of 10 first-reported-versus-revised questions.](results.svg)
+
 - `questions.json`: the questions, by category (L latest, H historical, C computed, V vintage, A attribution), each with a machine-readable spec.
 - `build_key.py`: computes `key.json` from FRED's public CSVs on the day of a run, since latest values move.
 - `RUNBOOK.md`: how a run is done and scored.

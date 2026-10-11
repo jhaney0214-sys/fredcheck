@@ -31,6 +31,23 @@ Memory is not a source. In the 6 October run the same recall failed once, on Dec
 
 The web arm got all ten from the data, both times, by reading ALFRED's public download files. On these questions an assistant with a browser can show its work and the official connector can't.
 
+## First print and now
+
+These are the revisions the questions asked about. "First reported" is the value in ALFRED's vintage for the day of the release; "now" is FRED on 10 October 2026.
+
+| | First reported | Now | Change |
+|---|---|---|---|
+| Payrolls, March 2025 (released 4 April 2025) | +228,000 | +67,000 | −161,000 |
+| Payrolls, May 2025 (6 June 2025) | +139,000 | +13,000 | −126,000 |
+| Payrolls, June 2025 (3 July 2025) | +147,000 | −20,000 | −167,000 |
+| Payrolls, July 2025 (1 August 2025) | +73,000 | +64,000 | −9,000 |
+| Real GDP growth, Q1 2022 (advance, 28 April 2022) | −1.4% | −1.0% | +0.4 points |
+| Real GDP growth, Q2 2022 (advance, 28 July 2022) | −0.9% | +0.6% | +1.5 points |
+| Real GDP growth, Q4 2024 (advance, 30 January 2025) | +2.3% | +2.4% | +0.1 points |
+| Total nonfarm jobs, December 2024 (as published 1 February 2025) | 159,536,000 | 158,316,000 | −1,220,000 |
+
+With no tools, the model recalled every figure in the "first reported" column. It got six of the seven "now" figures for payrolls and GDP wrong or gave a range. It remembers the headline from release day and has no way to know what happened to the number afterwards. The connector fixes that half. It can't supply the other half, which is why its answers borrowed the first column from memory.
+
 ## Smaller things
 
 - Neither tool arm made a plain error. The web arm's one lost mark is the University of Michigan sentiment index, which FRED posts a month late at the university's request. The web arm gave the newer figure from Michigan's own site (and FRED's as well); the connector gave FRED's. Both are defensible, and a user should know which one they're getting.
