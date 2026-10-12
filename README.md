@@ -10,6 +10,7 @@
 - `runs/<date>/`: every answer, every score with a one-line reason, and `RESULTS.md`.
 - `.claude/agents/`: the three arm definitions (Claude Code subagents).
 - `fred_auth.py`, `fred_call.py`: sign in to the connector, and call its tools from the command line.
+- `rerun.py`: the steps of a dated re-run that need no judgement (renew the token, check the connector's tools for a vintage option, rebuild the key, write the batches, tally the scores). `make_chart.py` draws `results.svg`.
 
 `WRITEUP.md` reports the 2026-10-10 run: connector 50 of 50 numbers right, web search 49, no tools 31. The connector has no vintage or as-of option, so its first-reported figures came from the model's memory. The 2026-10-06 run is a draft; see its `RESULTS.md` for how it differed from the runbook.
 

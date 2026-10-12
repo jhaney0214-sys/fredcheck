@@ -3,6 +3,12 @@
 For a Claude Code session opened in this folder when the author says "run FredCheck".
 No API key: both arms run as subagents on the author's plan.
 
+**Since 2026-10-12 `rerun.py` does the mechanical steps.** `python rerun.py prepare`
+does steps 1 and 2 and writes the batches for step 3, and moves `key.json` out of
+the project until the arms are done. `python rerun.py finish` puts it back and does
+step 4; run it again after scoring for the table in step 6 and a redrawn `results.svg`.
+Steps 3 and 5, and the words of `RESULTS.md`, still need the session.
+
 1. **Check the FRED tools are loaded.** The `fred` server comes from `.mcp.json`
    (gitignored; written by `fred_auth.py`). Its token lasts an hour from when it
    was written. If the FRED tools fail with an auth error, ask the author to run
