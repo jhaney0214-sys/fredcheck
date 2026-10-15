@@ -15,6 +15,18 @@ can read it.
 finish: puts key.json back, joins the agents' raw answers into one file per
 arm, and, once scores.jsonl exists, prints the results table beside the
 previous run's and redraws results.svg.
+
+    py rerun.py monthly                # the unattended part, for a scheduled task
+    py rerun.py table                  # just rewrite RESULTS.md
+
+monthly: rebuilds the key in memory from FRED's public CSVs (no API key),
+compares every answer with key.json (the key the last scored run was marked
+against), checks the connector for a vintage option if its saved sign-in
+still works, writes checks/<date>.json and rewrites RESULTS.md. It does not
+touch key.json and does not run the arms: those need a Claude Code session
+and the scoring needs judgement. Exit 0 when nothing needs a look, 3 when a
+fixed answer was revised or the connector may have gained a vintage option,
+1 when the key could not be rebuilt.
 """
 import datetime
 import json
@@ -207,24 +219,216 @@ def finish(date):
     if tally(date):
         print()
         print("results.svg redrawn:", make_chart.draw(date))
+        write_results()
+        print("RESULTS.md rewritten with this run's row")
         print("Now write runs/%s/RESULTS.md around that table, and update WRITEUP.md" % date)
         print("and the README's headline numbers by hand.")
     elif complete:
         print("All answers are in. Score them against key.json, then run finish again.")
 
 
+CHECKS = HERE / "checks"
+RESULTS = HERE / "RESULTS.md"
+#: A word beside a scored run's row in RESULTS.md.
+RUN_NOTES = {
+    "2026-10-06": "draft: run from a session opened outside the project, tool limits by instruction only",
+    "2026-10-10": "the run WRITEUP.md reports",
+}
+#: Fields of a key answer that follow from the others, so are not compared.
+DERIVED = {"series", "revision", "n"}
+
+
+def same(a, b):
+    if isinstance(a, (int, float)) and isinstance(b, (int, float)):
+        return abs(a - b) <= 1e-9 * max(1.0, abs(a), abs(b))
+    return a == b
+
+
+def shows(a, b):
+    """Whether a change shows at one decimal, the precision most marks use.
+    A CPI ratio moving in its sixth decimal is a revision but not a new answer."""
+    if isinstance(a, (int, float)) and isinstance(b, (int, float)):
+        return round(a, 1) != round(b, 1)
+    return True
+
+
+def fmt(v):
+    if isinstance(v, float):
+        return str(int(v)) if v.is_integer() else ("%.3f" % v).rstrip("0").rstrip(".")
+    text = str(v)
+    return text if len(text) <= 40 else text[:37] + "..."
+
+
+def compare(old, new, qs):
+    """Each question's answer in the fresh key against the baseline key.
+
+    moved:   a latest-value question whose latest period has changed. Expected
+             every month; the arms would be scored against the new period.
+    revised: any other change to an answer, including a latest value whose
+             period is the same but whose figure was revised. These are the
+             questions whose ground truth moved under a scored run.
+    errors:  answers the fresh key could not compute."""
+    out = {"moved": [], "revised": [], "errors": [], "unchanged": 0}
+    for q in qs:
+        qid = q["id"]
+        a, b = old.get(qid), new.get(qid, {"error": "not built"})
+        if "error" in b:
+            out["errors"].append({"id": qid, "error": fmt(b["error"])})
+            continue
+        if a is None or "error" in a:
+            out["revised"].append({"id": qid, "field": "(no baseline answer)",
+                                   "old": None, "new": None, "shows": True})
+            continue
+        if q["spec"]["type"] == "latest" and a.get("date") != b.get("date"):
+            out["moved"].append({"id": qid, "from": a.get("date"), "to": b.get("date")})
+            continue
+        changes = [{"id": qid, "field": f, "old": a.get(f), "new": b.get(f),
+                    "shows": shows(a.get(f), b.get(f))}
+                   for f in sorted((set(a) | set(b)) - DERIVED)
+                   if not same(a.get(f), b.get(f))]
+        out["revised"].extend(changes)
+        if not changes:
+            out["unchanged"] += 1
+    return out
+
+
+def connector_status():
+    """The vintage check, if the saved sign-in still works. A refresh token
+    that has expired needs the author at a browser, so that is reported,
+    not fatal."""
+    try:
+        tools, hits = check_connector()
+    except SystemExit:
+        print("connector: not checked; the saved sign-in failed. Run `py fred_auth.py` at a browser.")
+        return {"checked": False}
+    return {"checked": True, "tools": len(tools), "vintage_hits": hits}
+
+
+def monthly(date):
+    if (HOLD / "run.txt").exists() and (HOLD / "key.json").exists():
+        sys.exit("a run is between prepare and finish (key.json is in %s); finish it first" % HOLD)
+    base_path = HERE / "key.json"
+    if not base_path.exists():
+        sys.exit("key.json is missing, so there is nothing to compare against")
+    base = json.loads(base_path.read_text(encoding="utf-8"))
+    qs = questions()
+    import build_key
+    print("rebuilding the key in memory from FRED's public CSVs (a minute or two)...")
+    try:
+        key = build_key.build(quiet=True)
+    finally:
+        # FRED's terms bar storing its content: keep only the values compared.
+        shutil.rmtree(HERE / ".cache", ignore_errors=True)
+    found = compare(base["answers"], key["answers"], qs)
+    connector = connector_status()
+    record = {
+        "checked": date,
+        "baseline_run": make_chart.latest_run(),
+        "baseline_built": base.get("built"),
+        "key_built": key["built"],
+        "questions": len(qs),
+        "connector": connector,
+        "arms": "not run: they need a Claude Code session (RUNBOOK steps 3 to 5)",
+    }
+    record.update(found)
+    CHECKS.mkdir(exist_ok=True)
+    (CHECKS / (date + ".json")).write_text(json.dumps(record, indent=1) + "\n", encoding="utf-8")
+
+    print("key: %d answers unchanged, %d latest values on a new period, %d revisions, %d errors" % (
+        found["unchanged"], len(found["moved"]), len(found["revised"]), len(found["errors"])))
+    for r in found["revised"]:
+        print("  REVISED %s %s: %s -> %s%s" % (r["id"], r["field"], fmt(r["old"]), fmt(r["new"]),
+                                               "" if r["shows"] else " (below one decimal)"))
+    for e in found["errors"]:
+        print("  ERROR %s: %s" % (e["id"], e["error"]))
+    write_results()
+    print("wrote checks/%s.json and RESULTS.md (not committed)" % date)
+    if found["errors"]:
+        return 1
+    if any(r["shows"] for r in found["revised"]) or connector.get("vintage_hits"):
+        return 3
+    return 0
+
+
+def connector_cell(c):
+    if not c.get("checked"):
+        return "not checked (sign-in expired)"
+    if c.get("vintage_hits"):
+        return "**possible vintage option**: " + "; ".join(c["vintage_hits"])
+    return "no vintage option (%d tools)" % c["tools"]
+
+
+def revised_cell(rec):
+    shown = [r for r in rec["revised"] if r["shows"]]
+    quiet = len(rec["revised"]) - len(shown)
+    parts = ["%s %s %s → %s" % (r["id"], r["field"], fmt(r["old"]), fmt(r["new"])) for r in shown]
+    if quiet:
+        parts.append("%d below one decimal" % quiet)
+    return "; ".join(parts) or "none"
+
+
+def write_results():
+    names = [("fred", "FRED connector"), ("web", "Web search"), ("memory", "No tools")]
+    out = [
+        "# FredCheck results by date",
+        "",
+        "Written by `py rerun.py table` (and by `monthly`) from `runs/*/scores.jsonl` and",
+        "`checks/*.json`. Do not edit by hand.",
+        "",
+        "## Scored runs",
+        "",
+        "Numbers right out of the 50 questions. Each run's own `RESULTS.md` has the",
+        "period and source marks and every judgement call.",
+        "",
+        "| Run | " + " | ".join(n for _, n in names) + " | Note |",
+        "|---|---|---|---|---|",
+    ]
+    for run in sorted(p.name for p in RUNS.iterdir() if (p / "scores.jsonl").exists()):
+        counts, _ = marks(run)
+        out.append("| [%s](runs/%s/RESULTS.md) | %s | %s |" % (
+            run, run, " | ".join(str(total(counts, a)) for a, _ in names), RUN_NOTES.get(run, "")))
+    out += [
+        "",
+        "## Monthly ground-truth checks",
+        "",
+        "Each check rebuilds every answer from FRED's public data and compares it with",
+        "the key the last scored run was marked against. It does not put the questions",
+        "to any assistant. A latest-value question on a new period is expected; a",
+        "revision to any other answer means that question's ground truth moved after",
+        "it was scored.",
+        "",
+        "| Checked | Against | Unchanged | Latest values on a new period | Revised answers | Errors | Connector |",
+        "|---|---|---|---|---|---|---|",
+    ]
+    checks = sorted(CHECKS.glob("*.json")) if CHECKS.exists() else []
+    for path in checks:
+        rec = json.loads(path.read_text(encoding="utf-8"))
+        out.append("| %s | %s key | %d | %d | %s | %s | %s |" % (
+            rec["checked"], rec["baseline_run"], rec["unchanged"], len(rec["moved"]),
+            revised_cell(rec), ", ".join(e["id"] for e in rec["errors"]) or "none",
+            connector_cell(rec["connector"])))
+    if not checks:
+        out.append("| (none yet) | | | | | | |")
+    RESULTS.write_text("\n".join(out) + "\n", encoding="utf-8", newline="\n")
+
+
 def main(argv):
-    if len(argv) < 2 or argv[1] not in ("prepare", "finish", "tally"):
+    if len(argv) < 2 or argv[1] not in ("prepare", "finish", "tally", "monthly", "table"):
         sys.exit(__doc__)
+    if argv[1] == "table":
+        write_results()
+        return
     if len(argv) > 2:
         date = argv[2]
         datetime.date.fromisoformat(date)
-    elif argv[1] == "prepare":
+    elif argv[1] in ("prepare", "monthly"):
         date = datetime.date.today().isoformat()
     elif (HOLD / "run.txt").exists():
         date = (HOLD / "run.txt").read_text(encoding="utf-8").strip()
     else:
         date = make_chart.latest_run()
+    if argv[1] == "monthly":
+        sys.exit(monthly(date))
     {"prepare": prepare, "finish": finish, "tally": tally}[argv[1]](date)
 
 

@@ -9,6 +9,16 @@ the project until the arms are done. `python rerun.py finish` puts it back and d
 step 4; run it again after scoring for the table in step 6 and a redrawn `results.svg`.
 Steps 3 and 5, and the words of `RESULTS.md`, still need the session.
 
+**Between runs, `py rerun.py monthly`** (added 2026-10-15; `schedule/` sets it to
+run on the 15th) rebuilds every answer in memory, compares it with `key.json`
+and adds a row to `RESULTS.md`. It leaves `key.json` alone and runs no arm. A
+latest value on a new period is expected. A revision to any other answer means
+that question's ground truth moved after it was scored: before quoting the old
+run, check whether the revision changes a mark. The first check (2026-10-15)
+found one: A02, FRED's S&P 500 now starts 2016-10-17, not 2016-10-10. A start
+that moves a week in a week fits FRED keeping a rolling ten years of that
+series, so A02's answer likely moves every week. Commit `checks/` and `RESULTS.md` by hand.
+
 1. **Check the FRED tools are loaded.** The `fred` server comes from `.mcp.json`
    (gitignored; written by `fred_auth.py`). Its token lasts an hour from when it
    was written. If the FRED tools fail with an auth error, ask the author to run

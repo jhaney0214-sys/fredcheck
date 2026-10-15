@@ -168,7 +168,9 @@ def answer(spec):
     raise ValueError(t)
 
 
-def main():
+def build(quiet=False):
+    """The key as a dict. rerun.py's monthly check calls this without writing
+    key.json, so the key the last scored run was marked against stays put."""
     qs = json.loads((HERE / "questions.json").read_text(encoding="utf-8"))["questions"]
     key = {"built": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"), "answers": {}}
     for q in qs:
@@ -178,7 +180,13 @@ def main():
             a = {"error": str(e)}
         a["series"] = q["spec"]["series"]
         key["answers"][q["id"]] = a
-        print(q["id"], json.dumps(a, default=str)[:150])
+        if not quiet:
+            print(q["id"], json.dumps(a, default=str)[:150])
+    return key
+
+
+def main():
+    key = build()
     (HERE / "key.json").write_text(json.dumps(key, indent=1), encoding="utf-8")
 
 

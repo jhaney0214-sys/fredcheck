@@ -1,0 +1,22 @@
+# Checks the headline numbers the README and the write-up state against
+# claims.json, which counts each one from the committed scores of the run it
+# reports. Its status is the README's "numbers checked" badge.
+name: docclaims
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: jhaney0214-sys/docclaims@v0.4.0
+        with:
+          path: .
+          scan: "*.md"

@@ -1,0 +1,89 @@
+{
+ "_": "The headline numbers the README and write-up state, checked by docclaims (github.com/jhaney0214-sys/docclaims) in CI. Each is counted from the scored run it reports, so a rescored or repointed run that changes a number fails until the prose is changed too.",
+ "claims": [
+  {
+   "id": "question_count",
+   "claim": "Questions in the set",
+   "value": "50 questions",
+   "format": "%d questions",
+   "derive": {"files": ["questions.json"], "count": "^\\s*\\{\"id\": \"[A-Z]\\d+\", \"q\": "},
+   "status": "measured",
+   "anchor": "the entries in questions.json",
+   "checked_on": "2026-10-15",
+   "durable": "read from source on every verify",
+   "appears_in": ["README.md", "WRITEUP.md", "RESULTS.md"],
+   "near": ["wrote", "one day,", "Numbers right out of", "about U.S. economic data"],
+   "window": 40
+  },
+  {
+   "id": "connector_total",
+   "claim": "Numbers right for the FRED connector arm, run of 2026-10-10",
+   "value": "connector 50 of 50",
+   "format": "connector %d of 50",
+   "derive": {"files": ["runs/2026-10-10/scores.jsonl"], "count": "^\\{\"arm\": \"fred\", \"id\": \"[A-Z]\\d+\", \"number\": 1,"},
+   "status": "measured",
+   "anchor": "number marks for arm fred in runs/2026-10-10/scores.jsonl",
+   "checked_on": "2026-10-15",
+   "durable": "counted from the committed scores on every verify",
+   "appears_in": ["README.md"],
+   "near": ["FRED connector", "run:"],
+   "window": 60
+  },
+  {
+   "id": "web_total",
+   "claim": "Numbers right for the web search arm, run of 2026-10-10",
+   "value": "web search 49",
+   "format": "web search %d",
+   "derive": {"files": ["runs/2026-10-10/scores.jsonl"], "count": "^\\{\"arm\": \"web\", \"id\": \"[A-Z]\\d+\", \"number\": 1,"},
+   "status": "measured",
+   "anchor": "number marks for arm web in runs/2026-10-10/scores.jsonl",
+   "checked_on": "2026-10-15",
+   "durable": "counted from the committed scores on every verify",
+   "appears_in": ["README.md"],
+   "near": ["web search"],
+   "window": 20
+  },
+  {
+   "id": "memory_total",
+   "claim": "Numbers right for the no-tools arm, run of 2026-10-10",
+   "value": "no tools 31",
+   "format": "no tools %d",
+   "derive": {"files": ["runs/2026-10-10/scores.jsonl"], "count": "^\\{\"arm\": \"memory\", \"id\": \"[A-Z]\\d+\", \"number\": 1,"},
+   "status": "measured",
+   "anchor": "number marks for arm memory in runs/2026-10-10/scores.jsonl",
+   "checked_on": "2026-10-15",
+   "durable": "counted from the committed scores on every verify",
+   "appears_in": ["README.md"],
+   "near": ["no tools"],
+   "window": 20
+  },
+  {
+   "id": "memory_latest",
+   "claim": "Latest-value questions the no-tools arm got right, run of 2026-10-10",
+   "value": "0 of 10 latest values",
+   "format": "%d of 10 latest values",
+   "derive": {"files": ["runs/2026-10-10/scores.jsonl"], "count": "^\\{\"arm\": \"memory\", \"id\": \"L\\d+\", \"number\": 1,"},
+   "status": "measured",
+   "anchor": "number marks for arm memory on L questions in runs/2026-10-10/scores.jsonl",
+   "checked_on": "2026-10-15",
+   "durable": "counted from the committed scores on every verify",
+   "appears_in": ["README.md"],
+   "near": ["the model got"],
+   "window": 40
+  },
+  {
+   "id": "memory_vintage",
+   "claim": "First-reported-versus-revised questions the no-tools arm got right, run of 2026-10-10",
+   "value": "4 of 10 first-reported",
+   "format": "%d of 10 first-reported",
+   "derive": {"files": ["runs/2026-10-10/scores.jsonl"], "count": "^\\{\"arm\": \"memory\", \"id\": \"V\\d+\", \"number\": 1,"},
+   "status": "measured",
+   "anchor": "number marks for arm memory on V questions in runs/2026-10-10/scores.jsonl",
+   "checked_on": "2026-10-15",
+   "durable": "counted from the committed scores on every verify",
+   "appears_in": ["README.md"],
+   "near": ["latest values and"],
+   "window": 40
+  }
+ ]
+}

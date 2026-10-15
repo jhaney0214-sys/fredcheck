@@ -10,3 +10,6 @@
 
 __pycache__/
 *.py[cod]
+
+# The scheduled monthly check's output (schedule/monthly.cmd).
+checks/monthly.log
