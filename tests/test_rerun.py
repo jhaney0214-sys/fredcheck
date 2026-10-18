@@ -69,6 +69,29 @@ class Compare(unittest.TestCase):
         out = rerun.compare(OLD, fresh(A01={"source": "Freddie Mac; HUD"}), QS)
         self.assertEqual([(r["id"], r["field"]) for r in out["revised"]], [("A01", "source")])
 
+    def test_a_start_that_moves_with_the_calendar_is_rolling_not_revised(self):
+        # A02 on 2026-10-15: FRED's SP500 keeps ten years, so its start moved a week in five days.
+        old = dict(OLD, A01={"source": "S&P", "first_date": "2016-10-10", "series": "SP500"})
+        new = dict(OLD, A01={"source": "S&P", "first_date": "2016-10-17", "series": "SP500"})
+        out = rerun.compare(old, new, QS, elapsed_days=5)
+        self.assertEqual(out["revised"], [])
+        self.assertEqual(out["rolling"], [{"id": "A01", "field": "first_date",
+                                           "from": "2016-10-10", "to": "2016-10-17"}])
+        self.assertEqual(rerun.revised_cell(out), "none (A01 first_date rolls with the calendar "
+                                                  "(2016-10-10 → 2016-10-17))")
+
+    def test_a_start_that_moves_by_far_more_than_the_time_between_is_a_revision(self):
+        old = dict(OLD, A01={"source": "S&P", "first_date": "2016-10-10", "series": "SP500"})
+        new = dict(OLD, A01={"source": "S&P", "first_date": "2018-01-02", "series": "SP500"})
+        for elapsed in (5, None):
+            out = rerun.compare(old, new, QS, elapsed_days=elapsed)
+            self.assertEqual([r["field"] for r in out["revised"]], ["first_date"])
+            self.assertEqual(out["rolling"], [])
+
+    def test_days_between_two_key_stamps(self):
+        self.assertEqual(rerun.days_between("2026-10-10T20:49:10+00:00", "2026-10-15T23:12:07+00:00"), 5)
+        self.assertIsNone(rerun.days_between(None, "2026-10-15T23:12:07+00:00"))
+
     def test_historical_value_revised(self):
         out = rerun.compare(OLD, fresh(H01={"value": 14.7}), QS)
         self.assertEqual([r["id"] for r in out["revised"]], ["H01"])

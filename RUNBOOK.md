@@ -17,7 +17,10 @@ that question's ground truth moved after it was scored: before quoting the old
 run, check whether the revision changes a mark. The first check (2026-10-15)
 found one: A02, FRED's S&P 500 now starts 2016-10-17, not 2016-10-10. A start
 that moves a week in a week fits FRED keeping a rolling ten years of that
-series, so A02's answer likely moves every week. Commit `checks/` and `RESULTS.md` by hand.
+series, so A02's answer likely moves every week. Since 2026-10-18 the check
+reports a metadata start date that moved forward by about the days between the
+two keys (within 8) as ROLLING, in its own line and in brackets in the table,
+not as a revision; a start that jumps further is still a revision. Commit `checks/` and `RESULTS.md` by hand.
 
 1. **Check the FRED tools are loaded.** The `fred` server comes from `.mcp.json`
    (gitignored; written by `fred_auth.py`). Its token lasts an hour from when it

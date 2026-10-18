@@ -259,7 +259,33 @@ def fmt(v):
     return text if len(text) <= 40 else text[:37] + "..."
 
 
-def compare(old, new, qs):
+#: How far a rolling start may stray from the days between the two keys: FRED
+#: trims a weekly series a week at a time, so the start lags by up to a week.
+ROLLING_SLACK_DAYS = 8
+
+
+def rolls(a, b, elapsed_days):
+    """Whether a metadata `first_date` moved forward by about the time between
+    the keys: a series FRED keeps as a rolling window (SP500 holds ten years),
+    whose start moves every week and is not a revision. Found 2026-10-15 on A02."""
+    if elapsed_days is None:
+        return False
+    try:
+        shift = (datetime.date.fromisoformat(b) - datetime.date.fromisoformat(a)).days
+    except (TypeError, ValueError):
+        return False
+    return shift > 0 and abs(shift - elapsed_days) <= ROLLING_SLACK_DAYS
+
+
+def days_between(built_a, built_b):
+    """Whole days between two key `built` stamps, or None if either is missing."""
+    try:
+        return (datetime.datetime.fromisoformat(built_b) - datetime.datetime.fromisoformat(built_a)).days
+    except (TypeError, ValueError):
+        return None
+
+
+def compare(old, new, qs, elapsed_days=None):
     """Each question's answer in the fresh key against the baseline key.
 
     moved:   a latest-value question whose latest period has changed. Expected
@@ -267,8 +293,10 @@ def compare(old, new, qs):
     revised: any other change to an answer, including a latest value whose
              period is the same but whose figure was revised. These are the
              questions whose ground truth moved under a scored run.
+    rolling: a metadata start date that moved forward by the time between the
+             keys (`elapsed_days`): a rolling window, expected, reported apart.
     errors:  answers the fresh key could not compute."""
-    out = {"moved": [], "revised": [], "errors": [], "unchanged": 0}
+    out = {"moved": [], "revised": [], "rolling": [], "errors": [], "unchanged": 0}
     for q in qs:
         qid = q["id"]
         a, b = old.get(qid), new.get(qid, {"error": "not built"})
@@ -286,7 +314,11 @@ def compare(old, new, qs):
                     "shows": shows(a.get(f), b.get(f))}
                    for f in sorted((set(a) | set(b)) - DERIVED)
                    if not same(a.get(f), b.get(f))]
-        out["revised"].extend(changes)
+        rolled = [c for c in changes if q["spec"]["type"] == "metadata" and c["field"] == "first_date"
+                  and rolls(c["old"], c["new"], elapsed_days)]
+        out["rolling"].extend({"id": c["id"], "field": c["field"], "from": c["old"], "to": c["new"]}
+                              for c in rolled)
+        out["revised"].extend(c for c in changes if c not in rolled)
         if not changes:
             out["unchanged"] += 1
     return out
@@ -319,7 +351,8 @@ def monthly(date):
     finally:
         # FRED's terms bar storing its content: keep only the values compared.
         shutil.rmtree(HERE / ".cache", ignore_errors=True)
-    found = compare(base["answers"], key["answers"], qs)
+    found = compare(base["answers"], key["answers"], qs,
+                    elapsed_days=days_between(base.get("built"), key["built"]))
     connector = connector_status()
     record = {
         "checked": date,
@@ -336,6 +369,9 @@ def monthly(date):
 
     print("key: %d answers unchanged, %d latest values on a new period, %d revisions, %d errors" % (
         found["unchanged"], len(found["moved"]), len(found["revised"]), len(found["errors"])))
+    for r in found["rolling"]:
+        print("  ROLLING %s %s: %s -> %s (moved with the calendar; a rolling window, not a revision)"
+              % (r["id"], r["field"], r["from"], r["to"]))
     for r in found["revised"]:
         print("  REVISED %s %s: %s -> %s%s" % (r["id"], r["field"], fmt(r["old"]), fmt(r["new"]),
                                                "" if r["shows"] else " (below one decimal)"))
@@ -364,7 +400,11 @@ def revised_cell(rec):
     parts = ["%s %s %s → %s" % (r["id"], r["field"], fmt(r["old"]), fmt(r["new"])) for r in shown]
     if quiet:
         parts.append("%d below one decimal" % quiet)
-    return "; ".join(parts) or "none"
+    rolled = ["%s %s rolls with the calendar (%s → %s)" % (r["id"], r["field"], r["from"], r["to"])
+              for r in rec.get("rolling", [])]
+    if not parts:
+        return "none (%s)" % "; ".join(rolled) if rolled else "none"
+    return "; ".join(parts + rolled)
 
 
 def write_results():
